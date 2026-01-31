@@ -1,5 +1,13 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Facebook,
+  Instagram,
+  Twitter,
+  Youtube,
+} from "lucide-react";
 import logo from "@/assets/Tri Sea Adventures logo.png";
 
 const Footer = () => {
@@ -9,33 +17,57 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center" aria-label="Tri Sea Adventures Home">
               <img
                 src={logo}
                 alt="Tri Sea Adventures Logo"
-                className="
-                            h-12 w-auto
-                            scale-150
-                            drop-shadow-[0_6px_14px_rgba(0,0,0,0.55)]
-                            transition-transform duration-300
-                          "
+                className="h-12 w-auto scale-150 drop-shadow-[0_6px_14px_rgba(0,0,0,0.55)] transition-transform duration-300"
               />
             </Link>
+
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               Your trusted partner for exploring the incredible diversity of India.
               From the Himalayas to the beaches, we craft unforgettable journeys.
             </p>
+
             <div className="flex gap-4">
-              <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors">
+              <a
+                href="#"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors"
+              >
                 <Facebook className="h-4 w-4" />
               </a>
-              <a href="https://www.instagram.com/triseaadventurespvtltd?igsh=d3BsNnlmMmkzbjNu" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors">
+
+              <a
+                href="https://www.instagram.com/triseaadventurespvtltd?igsh=d3BsNnlmMmkzbjNu"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors"
+              >
                 <Instagram className="h-4 w-4" />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors">
+
+              <a
+                href="#"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors"
+              >
                 <Twitter className="h-4 w-4" />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors">
+
+              <a
+                href="#"
+                aria-label="YouTube"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors"
+              >
                 <Youtube className="h-4 w-4" />
               </a>
             </div>
@@ -111,17 +143,37 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex gap-3">
                 <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/80 text-sm">
-                  6th Floor TRENDZ UPTOWN, C9VX+26H, Rd No 7, Kakatiya Hills, Guttala_Begumpet, Kavuri Hills, Madhapur,<br />Hyderabad, Telangana - 500081
-                </span>
+                <a
+                  href="https://maps.google.com/?q=TRENDZ+UPTOWN+Kavuri+Hills+Madhapur"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-foreground/80 text-sm hover:text-accent transition-colors"
+                >
+                  6th Floor, TRENDZ UPTOWN, Rd No 7, Kavuri Hills, Madhapur,
+                  Hyderabad, Telangana – 500081
+                </a>
               </li>
+
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-accent flex-shrink-0" />
-                <span className="text-primary-foreground/80 text-sm">+91 9666092444</span>
+                <a
+                  href="tel:+919666092444"
+                  className="text-primary-foreground/80 text-sm hover:text-accent transition-colors"
+                  aria-label="Call Tri Sea Adventures"
+                >
+                  +91 96660 92444
+                </a>
               </li>
+
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-accent flex-shrink-0" />
-                <span className="text-primary-foreground/80 text-sm">info@triseaadventures.com</span >
+                <a
+                  href="mailto:info@triseaadventures.com"
+                  className="text-primary-foreground/80 text-sm hover:text-accent transition-colors"
+                  aria-label="Email Tri Sea Adventures"
+                >
+                  info@triseaadventures.com
+                </a>
               </li>
             </ul>
           </div>
@@ -131,11 +183,12 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm text-center md:text-left">
-              © 2025 Try Sea. All rights reserved. Made with ❤️ in India
+              © 2025 Tri Sea Adventures. All rights reserved. Made with ❤️ in India
             </p>
-            <div className="flex gap-6">
-              <span className="text-primary-foreground/60 text-sm">Approved by Ministry of Tourism, Govt. of India</span>
-            </div>
+
+            <span className="text-primary-foreground/60 text-sm text-center">
+              Approved by Ministry of Tourism, Govt. of India
+            </span>
           </div>
         </div>
       </div>

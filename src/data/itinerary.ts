@@ -1,107 +1,140 @@
-export const delhiManaliKasolShimla = {
-  id: "DMKS-01",
-  title: "Delhi – Kullu – Manali – Kasol – Shimla",
-  duration: "5 Nights / 6 Days",
+export const andhraTelanganaDelhiManaliKasolShimla = {
+  id: "ATD-MSKS-01",
+  title:
+    "Andhra Pradesh / Telangana – Delhi – Manali – Solang – Kasol – Shimla Adventure Trip",
+  duration: "7 Nights / 8 Days",
   price: 9999,
-  route: ["Delhi", "Manali", "Kasol", "Shimla", "Delhi"],
+  route: [
+    "Andhra Pradesh",
+    "Telangana",
+    "Delhi",
+    "Manali",
+    "Solang",
+    "Kasol",
+    "Shimla",
+    "Delhi"
+  ],
+
+  contact: ["9666092111", "9666092444"],
 
   description:
-    "Experience the best of North India with this 6-day tour covering Delhi, Manali, Kasol, and Shimla. Enjoy local sightseeing, adventure activities, and serene landscapes.",
+    "An exciting 8-day adventure trip starting from Andhra Pradesh & Telangana, covering Delhi, Manali, Solang Valley, Kasol, Manikaran, and Shimla. Includes sightseeing, adventure activities, comfortable stays, and memorable journeys.",
 
   itinerary: [
     {
       day: "Day 1",
-      title: "Delhi Local Sightseeing",
+      title: "Andhra Pradesh & Telangana to New Delhi",
       details: [
-        "Morning pickup from Airport / Railway Station",
-        "India Gate",
-        "Red Fort",
-        "Qutub Minar",
-        "Lotus Temple",
-        "Akshardham Temple",
-        "Overnight journey to Manali"
+        "Journey starts from Andhra Pradesh & Telangana",
+        "Overnight Sleeper / AC Train Journey to New Delhi"
       ],
       meal: "No Meal",
-      stay: "Overnight Bus Journey"
+      stay: "Overnight Train Journey"
     },
     {
       day: "Day 2",
-      title: "Manali Arrival & Local Sightseeing",
+      title:
+        "Arrival in Delhi | Delhi Local Sightseeing | Overnight Journey to Manali",
       details: [
-        "Hotel check-in",
-        "Hadimba Temple",
-        "Jogini Waterfall (3 km trek)",
-        "Vashisht Temple",
-        "Mall Road",
-        "Van Vihar"
+        "Arrival at New Delhi Railway Station",
+        "Delhi sightseeing: India Gate, Red Fort, Qutub Minar, Lotus Temple",
+        "Akshardham Temple (subject to time)",
+        "Night departure to Manali by Volvo / Tempo Traveller / Dzire / Ertiga"
       ],
-      meal: "Breakfast & Dinner",
-      stay: "Manali Hotel"
+      meal: "No Meal",
+      stay: "Overnight Journey to Manali"
     },
     {
       day: "Day 3",
-      title: "Solang Valley & Atal Tunnel",
+      title: "Arrival in Manali | Manali Sightseeing",
       details: [
-        "Solang Valley",
-        "Atal Tunnel",
-        "Sissu / Rohtang (subject to weather)",
-        "Adventure activities (basic)"
+        "Hotel check-in & freshen up",
+        "Hidimba Devi Temple",
+        "Vashisht Temple",
+        "Tibetan Monastery",
+        "Mall Road",
+        "Van Vihar"
       ],
-      meal: "Breakfast & Dinner",
+      meal: "Dinner",
       stay: "Manali Hotel"
     },
     {
       day: "Day 4",
-      title: "Kullu Adventure & Kasol",
+      title: "Solang Valley | Atal Tunnel | Sissu Village",
       details: [
-        "Checkout from Manali",
-        "River Rafting (extra charge)",
-        "Paragliding (extra charge)",
-        "Visit Kasol & Manikaran",
-        "Music Night & Bonfire"
+        "Snow activities: Zip-line, Yak Ride, Tube Sliding, Mountain Biking, Skiing (self-paid)",
+        "Visit Atal Tunnel",
+        "Visit Sissu Village"
       ],
-      meal: "Breakfast & Dinner",
-      stay: "Kasol Camps"
+      meal: "Dinner",
+      stay: "Manali Hotel"
     },
     {
       day: "Day 5",
-      title: "Kasol to Shimla",
+      title: "Kullu | Kasol",
       details: [
-        "Manikaran Gurudwara",
-        "Lord Shiva Temple",
-        "Natural Hot Water Pool",
-        "Proceed to Shimla"
+        "River Rafting (Free)",
+        "Paragliding",
+        "Visit Kasol Market"
       ],
-      meal: "Breakfast & Dinner",
-      stay: "Shimla Hotel"
+      meal: "Dinner",
+      stay: "Kasol Camp"
     },
     {
       day: "Day 6",
-      title: "Shimla Local & Return",
+      title: "Kasol | Manikaran | Shimla",
       details: [
-        "Kufri",
-        "Christ Church",
-        "Ridge View Point",
-        "Jakhoo Temple",
+        "Visit Manikaran Sahib Gurudwara",
+        "Visit Lord Shiva Temple",
+        "Natural Hot Water Springs",
+        "Proceed to Shimla"
+      ],
+      meal: "Dinner",
+      stay: "Shimla Hotel"
+    },
+    {
+      day: "Day 7",
+      title: "Shimla Sightseeing | Night Journey to Delhi",
+      details: [
+        "Visit Kufri",
         "Mall Road",
-        "Evening bus to Delhi",
-        "Reach Delhi around 2:00 AM"
+        "Christ Church",
+        "Lakkar Bazaar",
+        "Scandal Point",
+        "Ridge View Point",
+        "Evening departure to Delhi"
       ],
       meal: "Breakfast",
+      stay: "Overnight Journey to Delhi"
+    },
+    {
+      day: "Day 8",
+      title: "Arrival in New Delhi",
+      details: [
+        "Arrival in Delhi around 2:00–3:00 AM",
+        "Tour ends with beautiful memories"
+      ],
+      meal: "No Meal",
       stay: "—"
     }
   ],
 
   inclusions: [
-    "Hotel & Camp Stay",
+    "Up & Down Sleeper / AC Train Tickets (as per package)",
+    "Hotel Accommodation",
     "Breakfast & Dinner",
-    "Sightseeing as per itinerary",
-    "Music Night & Bonfire"
+    "Delhi Local Sightseeing",
+    "Local Sightseeing Transportation",
+    "Telugu Guide",
+    "Music Night & Bonfire",
+    "Free River Rafting"
   ],
 
   exclusions: [
-    "Adventure activities charges",
-    "Personal expenses",
-    "Anything not mentioned in inclusions"
+    "Room Heaters",
+    "Adventure & Snow Sports Activities",
+    "4x4 / 4WD Vehicles",
+    "Personal Expenses",
+    "Expenses due to natural or man-made calamities"
   ]
 };
