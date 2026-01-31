@@ -11,9 +11,7 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -28,44 +26,45 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? "bg-card/95 backdrop-blur-md shadow-soft"
-        : "bg-transparent"
+          ? "bg-card/95 backdrop-blur-md shadow-soft"
+          : "bg-transparent"
         }`}
     >
       {/* Top Bar */}
       <div className="hidden md:block bg-primary text-primary-foreground py-2">
         <div className="container-custom flex justify-between items-center text-sm">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2">
-              <MapPin className="h-4 w-4" />
-              India's Premier Travel Partner
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
+          <a
+            href="https://maps.google.com/?q=TRENDZ+UPTOWN+Kavuri+Hills+Madhapur"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-accent transition-colors"
+            aria-label="View office location on Google Maps"
+          >
+            <MapPin className="h-4 w-4" />
+            India’s Premier Travel Partner
+          </a>
+
+          <a
+            href="tel:+919666092444"
+            className="flex items-center gap-2 hover:text-accent transition-colors"
+            aria-label="Call Tri Sea Adventures"
+          >
             <Phone className="h-4 w-4" />
-            <span>+91 9666092444</span>
-          </div>
+            +91 96660 92444
+          </a>
         </div>
       </div>
 
       {/* Main Navbar */}
       <nav className="container-custom py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center">
+          <Link to="/" aria-label="Tri Sea Adventures Home">
             <img
               src={logo}
               alt="Tri Sea Adventures Logo"
-              className="
-                h-12 w-auto
-                scale-150
-                drop-shadow-[0_6px_14px_rgba(0,0,0,0.55)]
-                transition-transform duration-300
-              "
+              className="h-12 w-auto scale-150 drop-shadow-[0_6px_14px_rgba(0,0,0,0.55)] transition-transform duration-300"
             />
           </Link>
-
-
-
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -74,25 +73,27 @@ const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={`font-medium transition-colors hover:text-accent ${location.pathname === link.path
-                  ? "text-accent"
-                  : isScrolled
-                    ? "text-foreground"
+                    ? "text-accent"
                     : "text-foreground"
                   }`}
               >
                 {link.name}
               </Link>
             ))}
-            <Button className="bg-accent hover:bg-saffron-dark text-accent-foreground">
-              Book Now
+
+            <Button
+              asChild
+              className="bg-accent hover:bg-saffron-dark text-accent-foreground"
+            >
+              <Link to="/contact">Book Now</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            onClick={() => setIsOpen((v) => !v)}
+            aria-label="Toggle navigation menu"
           >
             {isOpen ? (
               <X className="h-6 w-6 text-foreground" />
@@ -118,15 +119,21 @@ const Navbar = () => {
                     to={link.path}
                     onClick={() => setIsOpen(false)}
                     className={`font-medium py-2 transition-colors ${location.pathname === link.path
-                      ? "text-accent"
-                      : "text-foreground"
+                        ? "text-accent"
+                        : "text-foreground"
                       }`}
                   >
                     {link.name}
                   </Link>
                 ))}
-                <Button className="bg-accent hover:bg-saffron-dark text-accent-foreground w-full">
-                  Book Now
+
+                <Button
+                  asChild
+                  className="bg-accent hover:bg-saffron-dark text-accent-foreground w-full"
+                >
+                  <Link to="/contact" onClick={() => setIsOpen(false)}>
+                    Book Now
+                  </Link>
                 </Button>
               </div>
             </motion.div>

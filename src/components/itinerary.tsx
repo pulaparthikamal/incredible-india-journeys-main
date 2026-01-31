@@ -1,9 +1,9 @@
-import { delhiManaliKasolShimla } from "../data/itinerary";
+import { andhraTelanganaDelhiManaliKasolShimla } from "../data/itinerary";
 
 const Itinerary = () => {
   return (
     <div className="max-w-4xl mx-auto">
-      {delhiManaliKasolShimla.itinerary.map((day) => (
+      {andhraTelanganaDelhiManaliKasolShimla.itinerary.map((day) => (
         <div key={day.day} className="border rounded mb-4">
           <div className="bg-gray-100 p-4 font-semibold">
             {day.day}: {day.title}

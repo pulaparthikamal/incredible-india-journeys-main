@@ -19,6 +19,9 @@ import { getPackageById } from "@/data/packages";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import triseaadventureslogo from "@/assets/Tri Sea Adventures logo.png"
+const logoImg = new Image();
+logoImg.src = triseaadventureslogo;
 
 const PackageDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -58,13 +61,61 @@ const PackageDetails = () => {
     doc.setFillColor(32, 64, 110); // royal blue
     doc.rect(0, 0, pageWidth, 36, "F");
 
+    // --- Logo ---
+    const logoX = 20;
+    const logoY = 12;
+    const logoW = 20;
+    const logoH = 20;
+
+    doc.addImage(logoImg, "PNG", logoX, logoY, logoW, logoH);
+
+    // --- Text starts AFTER logo ---
+    const textX = logoX + logoW + 6; // gap = 6
+
     doc.setTextColor(255, 255, 255);
+
+    // Brand name
     doc.setFontSize(22);
-    doc.text("TriSea Adventures", 20, 22);
+    doc.text("TriSea Adventures", textX, 22);
 
+    // ===== CONTACT NUMBERS (RIGHT-ALIGNED & CLICKABLE) =====
     doc.setFontSize(10);
-    doc.text("Discover Incredible India", 20, 29);
+    doc.setTextColor(255, 255, 255);
 
+    const contactX = pageWidth - 20;
+
+    // Vertical positioning (clean + balanced)
+    const labelY = 16;
+    const numbersY = 22;
+
+    // Text values
+    const contactLabel = "Contact No's:";
+    const contactNumbers = "9666092111, 9666092444";
+
+    // --- Draw label ---
+    doc.text(contactLabel, contactX, labelY, { align: "right" });
+
+    // --- Draw numbers ---
+    doc.text(contactNumbers, contactX, numbersY, { align: "right" });
+
+    // --- Measure width of numbers (IMPORTANT) ---
+    const numbersWidth = doc.getTextWidth(contactNumbers);
+
+    // --- Clickable area for BOTH numbers ---
+    doc.link(
+      contactX - numbersWidth, // x
+      numbersY - 4,            // y
+      numbersWidth,            // width
+      6,                       // height
+      { url: "tel:+919666092111" } // primary number
+    );
+
+
+
+    // Tagline
+    doc.setFontSize(10);
+    doc.text("Discover Incredible India", textX, 29);
+    // Right-aligned trust text (unchanged)
     doc.setFontSize(9);
     doc.text(
       "Carefully curated journeys • Trusted travel partner",
@@ -77,7 +128,9 @@ const PackageDetails = () => {
     y = 50;
     doc.setTextColor(30, 30, 30);
     doc.setFontSize(18);
-    doc.text(pkg.name, 20, y);
+    const titleLines = doc.splitTextToSize(pkg.name, pageWidth - 40);
+    doc.text(titleLines, 20, y);
+    y += titleLines.length * 8;
 
     // underline (handwritten feel)
     y += 2;
